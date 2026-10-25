@@ -1,0 +1,10 @@
+{
+  "name": "Mobile Studio Pro - Live Stream & Broadcast Suite",
+  "description": "Professional multi-platform live streaming studio with RTMP presets, simultaneous local MP4 recording, live mic voice-over, media trimmer, zoom controls, and real-time audience analytics.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

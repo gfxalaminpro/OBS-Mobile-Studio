@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">মোবাইল স্টুডিও</string>
+    <string name="pick_file">ফাইল বাছুন</string>
+    <string name="remove_file">ফাইল কেটে দিন</string>
+    <string name="orientation_landscape">ল্যান্ডস্কেপ</string>
+    <string name="orientation_portrait">পোর্ট্রেট</string>
+    <string name="go_live">লাইভ শুরু করুন</string>
+    <string name="stop">বন্ধ করুন</string>
+    <string name="stream_url_hint">RTMP সার্ভার ইউআরএল</string>
+    <string name="stream_key_hint">স্ট্রিম কি (Stream Key)</string>
+    <string name="audio_playing">অডিও বাজছে…</string>
+    <string name="notification_channel_name">লাইভ স্ট্রিমিং</string>
+    <string name="notification_title">মোবাইল স্টুডিও লাইভ</string>
+    <string name="notification_text">স্ক্রিন ও ইন্টারনাল অডিও RTMP-তে লাইভ হচ্ছে...</string>
+    <string name="toast_empty_credentials">অনুগ্রহ করে স্ট্রিম ইউআরএল ও স্ট্রিম কি দিন</string>
+    <string name="toast_audio_permission_denied">ইন্টারনাল অডিও ও লাইভ ভয়েস দেওয়ার জন্য অডিও পারমিশন প্রয়োজন</string>
+    <string name="toast_unsupported_file">অনুপযুক্ত ফাইল ফরম্যাট</string>
+    <string name="toast_error_reading_file">ফাইল পড়তে সমস্যা হয়েছে</string>
+    <string name="toast_encoder_failed">ভিডিও বা অডিও এনকোডার তৈরি করা যায়নি</string>
+    <string name="toast_local_recording_started">একসাথে লোকাল MP4 রেকর্ডিং শুরু হয়েছে</string>
+    <string name="toast_local_recording_saved">রেকর্ডিং Movies/MobileStudio ফোল্ডারে সেভ হয়েছে</string>
+    
+    <!-- Platform Presets Bengali -->
+    <string name="platform_dailymotion">ডেইলি মোশন (Dailymotion)</string>
+    <string name="platform_restream">রিস্ট্রিম (Restream.io)</string>
+    <string name="platform_youtube">ইউটিউব (YouTube)</string>
+    <string name="platform_facebook">ফেসবুক (Facebook)</string>
+    <string name="platform_twitch">টুইচ (Twitch)</string>
+    <string name="platform_kick">কিক (Kick)</string>
+    <string name="platform_dual">একসাথে ডাবল লাইভ (YT+FB)</string>
+    <string name="platform_custom">কাস্টম RTMP</string>
+    
+    <!-- Feature Labels Bengali -->
+    <string name="local_record_title">লোকাল রেকর্ড (MP4)</string>
+    <string name="local_record_desc">লাইভ চলাকালীন একই সাথে ফোনে MP4 ভিডিও সেভ রাখুন</string>
+    <string name="file_location_label">ফাইলের লোকেশন:</string>
+    <string name="zoom_label">জুম ইন / আউট:</string>
+    <string name="voice_over_label">লাইভ ভয়েস ওভার (মাইক্রোফোন)</string>
+    <string name="trim_segment_label">অংশ কেটে ফেলা (Trim)</string>
+    <string name="quality_title">কোয়ালিটি কনফিগারেশন</string>
+    <string name="live_indicator">লাইভ</string>
+    <string name="developer_credit">Developed by: Al-Amin Islam</string>
+    <string name="facebook_url">https://www.facebook.com/alaminislam.nk</string>
+    <string name="instagram_url">https://www.instagram.com/alaminislam.nk</string>
+</resources>

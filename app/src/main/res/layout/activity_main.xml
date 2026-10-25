@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05070A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header & Studio Controls -->
+        <LinearLayout
+            android:id="@+id/controlPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#161B22"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Action buttons row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPickFile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/pick_file"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnRemoveFile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:layout_marginEnd="4dp"
+                    android:backgroundTint="#30363D"
+                    android:text="@string/remove_file"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnOrientation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/orientation_landscape"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnGoLive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:layout_marginStart="4dp"
+                    android:backgroundTint="#FF2E63"
+                    android:text="@string/go_live"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- File Location Bar (shows exact path of selected file) -->
+            <LinearLayout
+                android:id="@+id/layoutFileLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="#0D1117"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📁 "
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tvFileLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:text="/storage/emulated/0/Download/stream_media.mp4"
+                    android:textColor="#38EF7D"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Platform preset & encoders row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spPlatform"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1.3"
+                    android:layout_marginEnd="4dp"
+                    android:background="#21262D" />
+
+                <Spinner
+                    android:id="@+id/spResolution"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="#21262D" />
+
+                <Spinner
+                    android:id="@+id/spFps"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.8"
+                    android:layout_marginEnd="4dp"
+                    android:background="#21262D" />
+
+                <Spinner
+                    android:id="@+id/spBitrate"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0.9"
+                    android:background="#21262D" />
+            </LinearLayout>
+
+            <!-- Local Record toggle & Mic Voice-Over row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbLocalRecord"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="🔴 Local Record (MP4)"
+                    android:textColor="#F0F6FC"
+                    android:textSize="11sp" />
+
+                <CheckBox
+                    android:id="@+id/cbLiveVoiceOver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="🎙️ Live Mic Voice-over"
+                    android:textColor="#00D2FF"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Stream URL and Stream Key inputs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etStreamUrl"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1.5"
+                    android:layout_marginEnd="4dp"
+                    android:background="#21262D"
+                    android:hint="@string/stream_url_hint"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:text="rtmp://publish.dailymotion.com/live"
+                    android:textColor="#F0F6FC"
+                    android:textColorHint="#8B949E"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/etStreamKey"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:background="#21262D"
+                    android:hint="@string/stream_key_hint"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:textColor="#F0F6FC"
+                    android:textColorHint="#8B949E"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Live Content Viewport Area -->
+        <FrameLayout
+            android:id="@+id/contentArea"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#000000">
+
+            <ImageView
+                android:id="@+id/ivPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvAudioLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/audio_playing"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <!-- Bottom Zoom & Framing Adjustment Bar -->
+        <LinearLayout
+            android:id="@+id/layoutZoomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#161B22"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔍 Zoom:"
+                android:textColor="#8B949E"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnZoomOut"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="6dp"
+                android:padding="0dp"
+                android:text="-"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/sbZoom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="300"
+                android:progress="100" />
+
+            <Button
+                android:id="@+id/btnZoomIn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="0dp"
+                android:text="+"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvZoomValue"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:gravity="center"
+                android:text="100%"
+                android:textColor="#F0F6FC"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnResetZoom"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="4dp"
+                android:paddingHorizontal="8dp"
+                android:text="Reset"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Floating Live Stream Health & Connection Monitor HUD -->
+    <LinearLayout
+        android:id="@+id/layoutStreamStatsHUD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="12dp"
+        android:background="#D90B0E14"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLiveStatusIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● LIVE"
+                android:textColor="#FF2E63"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLiveBitrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="3000 kbps"
+                android:textColor="#38EF7D"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLiveFps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="30.0 fps"
+                android:textColor="#00D2FF"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvLocalRecordStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="REC ●"
+                android:textColor="#FF5C35"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLiveDrops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drops: 0"
+                android:textColor="#F0F6FC"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvLiveJitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Jitter: 4ms"
+                android:textColor="#F0F6FC"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvReconnectWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="⚠️ Reconnecting..."
+            android:textColor="#FFA500"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStopLive"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="12dp"
+        android:alpha="0.85"
+        android:backgroundTint="#FF2E63"
+        android:text="@string/stop"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+</FrameLayout>

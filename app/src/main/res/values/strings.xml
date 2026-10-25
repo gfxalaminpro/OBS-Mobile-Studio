@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobile Studio</string>
+    <string name="pick_file">Pick file</string>
+    <string name="remove_file">Remove File</string>
+    <string name="orientation_landscape">Landscape</string>
+    <string name="orientation_portrait">Portrait</string>
+    <string name="go_live">Go Live</string>
+    <string name="stop">Stop</string>
+    <string name="stream_url_hint">RTMP Server URL</string>
+    <string name="stream_key_hint">Stream Key</string>
+    <string name="audio_playing">Audio playing</string>
+    <string name="notification_channel_name">Live Streaming</string>
+    <string name="notification_title">Mobile Studio Live</string>
+    <string name="notification_text">Streaming screen and audio to RTMP...</string>
+    <string name="toast_empty_credentials">Please enter both Stream URL and Stream Key</string>
+    <string name="toast_audio_permission_denied">RECORD_AUDIO permission is required to stream internal audio and live voice-over</string>
+    <string name="toast_unsupported_file">Unsupported file type selected</string>
+    <string name="toast_error_reading_file">Error loading selected file</string>
+    <string name="toast_encoder_failed">Failed to prepare video or audio encoder</string>
+    <string name="toast_local_recording_started">Simultaneous local MP4 recording started</string>
+    <string name="toast_local_recording_saved">Local recording saved to Movies/MobileStudio</string>
+    
+    <!-- Platform Presets -->
+    <string name="platform_dailymotion">Dailymotion</string>
+    <string name="platform_restream">Restream.io</string>
+    <string name="platform_youtube">YouTube</string>
+    <string name="platform_facebook">Facebook</string>
+    <string name="platform_twitch">Twitch</string>
+    <string name="platform_kick">Kick</string>
+    <string name="platform_dual">Dual Live (YT + FB)</string>
+    <string name="platform_custom">Custom RTMP</string>
+    
+    <!-- Feature Labels -->
+    <string name="local_record_title">Local Record (MP4)</string>
+    <string name="local_record_desc">Save stream copy to device storage simultaneously</string>
+    <string name="file_location_label">File Location:</string>
+    <string name="zoom_label">Zoom:</string>
+    <string name="voice_over_label">Live Mic Voice-over</string>
+    <string name="trim_segment_label">Trim / Cut Segment</string>
+    <string name="quality_title">Quality Settings</string>
+    <string name="live_indicator">LIVE</string>
+    <string name="developer_credit">Developed by: Al-Amin Islam</string>
+    <string name="facebook_url">https://www.facebook.com/alaminislam.nk</string>
+    <string name="instagram_url">https://www.instagram.com/alaminislam.nk</string>
+</resources>
